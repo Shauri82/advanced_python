@@ -6,8 +6,9 @@ from src.adv.interfaces import DataProcessor, AuctionRepository, RowReader
 from src.adv.model import Vehicle, AuctionKey
 from src.adv.parser import parse_auction_datetime
 
+
 class CsvRowReader(RowReader):
-    def row_iterate(self,path: Path) -> Iterator[Dict[str, str]]:
+    def row_iterate(self, path: Path) -> Iterator[Dict[str, str]]:
         with path.open("r", encoding="utf-8", newline="") as f:
             reader = csv.DictReader(f)
             for row in reader:
@@ -19,6 +20,7 @@ def make_auction_key(row: Dict[str, str]) -> AuctionKey:
         date=parse_auction_datetime(row["Auction Date"]),
         city=row["Branch Name"],
     )
+
 
 # Klasa do przetwarzania danych w słowniku na obiekty typu Vehicle
 class DictDataProcessor(DataProcessor):

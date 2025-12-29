@@ -19,6 +19,7 @@ class Vehicle:
     vehicle_type: str
     auction: Auction
 
+
 # Klasa pomocnicza na potrzeby cache'a aukcji. NamedTuple zapewnia hashable
 class AuctionKey(NamedTuple):
     date: datetime

@@ -3,6 +3,7 @@ from pathlib import Path
 from src.adv.interfaces import DataProcessor, RowReader
 from src.adv.model import Vehicle
 
+
 # Serwis przetwarzający dane na listę pojazdów.
 class DataProcessingService:
     def __init__(self, data_processor: DataProcessor, row_reader: RowReader):
